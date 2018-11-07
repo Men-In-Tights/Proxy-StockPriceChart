@@ -36,7 +36,7 @@ app.all(`/api/symbol/:${stockPriceChartId + 4}/week`, (req, res) => {
   apiProxy.web(req, res, { target: stockPriceChart });
 });
 
-app.all('/api/volumes/symbols/6', (req, res) => {
+app.all('/api/volumes/symbols/', (req, res) => {
   apiProxy.web(req, res, { target: priceVolumeChart });
 });
 

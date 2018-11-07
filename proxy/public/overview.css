@@ -1,0 +1,32 @@
+#overview {
+  display: grid;
+  grid-template-columns: 676px 323px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "stockPriceChart buyService"
+    "priceVolumeChart buyService"
+    "PeopleAlsoBought buyService";
+  padding-left: 20px;
+  padding-top: 5px;
+  column-gap: 70px;
+}
+
+#buyServiceContainer {
+  grid-area: buyService;
+}
+
+#stockPriceChart {
+  grid-area: stockPriceChart;
+}
+
+#buyService {
+  display: block;
+}
+
+#priceVolumeChart {
+  grid-area: priceVolumeChart;
+}
+
+#app {
+  grid-area: PeopleAlsoBought;
+}
