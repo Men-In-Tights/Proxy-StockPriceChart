@@ -5,11 +5,10 @@ const httpProxy = require('http-proxy');
 const app = express();
 const apiProxy = httpProxy.createProxyServer();
 
-const stockPriceChart = 'http://localhost:3001',
-      priceVolumeChart = 'http://localhost:3002',
-      buyService = 'http://localhost:3003',
-      peopleAlsoBought = 'http://localhost:3004';
-
+const stockPriceChart = 'http://ec2-35-172-183-27.compute-1.amazonaws.com/',
+      priceVolumeChart = 'http://ec2-34-224-212-238.compute-1.amazonaws.com/',
+      buyService = 'http://ec2-34-200-253-32.compute-1.amazonaws.com/',
+      peopleAlsoBought = 'http://ec2-18-224-182-229.us-east-2.compute.amazonaws.com/';
 
 app.use(express.static(__dirname + '/public'));
 const port = 3000;
@@ -36,7 +35,7 @@ app.all(`/api/symbol/:${stockPriceChartId + 4}/week`, (req, res) => {
   apiProxy.web(req, res, { target: stockPriceChart });
 });
 
-app.all('/api/volumes/symbols/', (req, res) => {
+app.all(`/api/volumes/symbols/:id`, (req, res) => {
   apiProxy.web(req, res, { target: priceVolumeChart });
 });
 

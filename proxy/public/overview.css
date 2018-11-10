@@ -1,6 +1,6 @@
 #overview {
   display: grid;
-  grid-template-columns: 676px 323px;
+  grid-template-columns: 696px 323px;
   grid-template-rows: auto;
   grid-template-areas:
     "stockPriceChart buyService"
@@ -17,6 +17,7 @@
 
 #stockPriceChart {
   grid-area: stockPriceChart;
+  padding-left: 20px;
 }
 
 #buyService {
@@ -25,6 +26,8 @@
 
 #priceVolumeChart {
   grid-area: priceVolumeChart;
+  padding-left: 20px;
+  margin-top: 35px;
 }
 
 #app {
