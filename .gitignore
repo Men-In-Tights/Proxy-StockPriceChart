@@ -29,3 +29,5 @@ Service-StockPriceChart
 
 bundle.js
 config.js
+
+*.pem
